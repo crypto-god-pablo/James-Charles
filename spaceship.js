@@ -1,6 +1,6 @@
 
 // Populate a global variable for the spaceship
-function InitializeSpaceship() {
+function InitializeJamesCharles() {
   var canvas = document.getElementById('mainCanvas');
   var context = canvas.getContext('2d');
   context.scale(1,1);
@@ -8,7 +8,7 @@ function InitializeSpaceship() {
     x : 300,
     y : 150,
     rotation : 0,
-    health : 3,
+    health : 1,
     positions : [
       {
         x : 0,
