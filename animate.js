@@ -3,7 +3,7 @@
  *    keyboard control
  *
  */
-function handleShipAnimation() {
+/*function handleShipAnimation() {
   if (CONTROLS.ship.forward) {
     var radians = (Math.PI / 180) * SPACE_SHIP.rotation,
         cos = Math.cos(radians),
@@ -35,7 +35,7 @@ function handleShipAnimation() {
   } else if (SPACE_SHIP.y < 0) {
     SPACE_SHIP.y = 300;
   }
-}
+}*/
 function RenderNewObject(context) {
 //  var canvas = document.getElementById('canvas');
   // Draw a new item here using the canvas 'context' variable
@@ -50,23 +50,19 @@ function HandleNewObjectMovement() {
   if (PAB_OBJECT.x >= 500 || PAB_OBJECT.y >= 200)
   {
     PAB_OBJECT.x -= 2.5;
-    PAB_OBJECT.y -= 1;
     forward = false;
   }
   else if (PAB_OBJECT.x == 0 || PAB_OBJECT.y == 0)
   {
     PAB_OBJECT.x += 2.5;
-    PAB_OBJECT.y += 1;
     forward = true;
   }
   else if (forward == false) {
     PAB_OBJECT.x -= 2.5;
-    PAB_OBJECT.y -= 1;
     forward = false;
   }
   else if (forward == true){
     PAB_OBJECT.x += 2.5;
-    PAB_OBJECT.y += 1;
     forward = true;
   }
 }
@@ -77,14 +73,14 @@ function runGame() {
   if (GAME.started) {
 
     // 1 - Reposition the objects
-    handleShipAnimation();
-    HandleNewObjectMovement();
+    //handleShipAnimation();
+   HandleNewObjectMovement();
 
     // 2 - Clear the CANVAS
     context.clearRect(0, 0, 600, 300);
 
     // 3 - Draw new items
-    RenderSpaceship(context);
+    //RenderSpaceship(context);
     RenderNewObject(context);
 
   } else {
