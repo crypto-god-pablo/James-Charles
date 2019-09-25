@@ -44,9 +44,11 @@ document.addEventListener('keyup', function(event) {
   switch (event.key) {
     case "ArrowUp":
       CONTROLS.ship.forward = false;
+      NEW_OBJECT.y += 35;
       break;
     case "ArrowDown":
       CONTROLS.ship.backward = false;
+      NEW_OBJECT.y -=35;
       break;
     case "ArrowLeft":
       CONTROLS.ship.rotateCounterClockwise = false;

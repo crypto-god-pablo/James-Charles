@@ -40,30 +40,53 @@ function RenderNewObject(context) {
 //  var canvas = document.getElementById('canvas');
   // Draw a new item here using the canvas 'context' variable
   context.fillStyle = 'rgb(200,0,0)';
-  context.fillRect(PAB_OBJECT.x, PAB_OBJECT.y, 100, 100);
+  context.fillRect(PAB_OBJECT.x, PAB_OBJECT.y, 25, 25);
+  context.fillRect(NEW_OBJECT.x,NEW_OBJECT.y, 25, 25);
+  context.fillRect(BT.x, BT.y, 25,25);
 
 
 }
 
 function HandleNewObjectMovement() {
+/*  document.addEventListener('keydown', keyDownHandler, false);
+  document.addEventListener('keyup', keyUpHandler, false);
 
-  if (PAB_OBJECT.x >= 500 || PAB_OBJECT.y >= 200)
-  {
-    PAB_OBJECT.x -= 2.5;
-    forward = false;
+  var upPressed = false;
+  var downPressed = false;
+
+  function keyDownHandler(event) {
+    if(event.keyCode == 40) {
+    	downPressed = true;
+    }
+    else if(event.keyCode == 38) {
+    	upPressed = true;
+    }
   }
-  else if (PAB_OBJECT.x == 0 || PAB_OBJECT.y == 0)
-  {
-    PAB_OBJECT.x += 2.5;
-    forward = true;
+
+  function keyUpHandler(event){
+    if(event.keyCode == 40) {
+      	downPressed = false;
+    }
+    else if(event.keyCode == 38) {
+      	upPressed = false;
+    }
   }
-  else if (forward == false) {
-    PAB_OBJECT.x -= 2.5;
-    forward = false;
-  }
-  else if (forward == true){
-    PAB_OBJECT.x += 2.5;
-    forward = true;
+
+    if(downPressed) {
+        NEW_OBJECT.y += 5;
+    }
+    else if(upPressed) {
+        NEW_OBJECT.y -= 5;
+    }
+*/
+  PAB_OBJECT.x-=1;
+  BT.x-=1;
+  if (NEW_OBJECT.x>GAME.canvas.width) {
+    PAB_OBJECT.x=0;
+    BT.x=0;
+  }else if (NEW_OBJECT.y>GAME.canvas.height) {
+    PAB_OBJECT.y=0;
+    BT.y=0;
   }
 }
 
